@@ -62,13 +62,13 @@
     .interest-index { color: #7d8d77; font-size: 11px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
     h3 { font-size: 16px; font-weight: 600; line-height: 1.5; margin: 8px 0 9px; }
     .interests p { font-size: 14px; line-height: 1.75; color: var(--muted); margin: 0; }
-    .project { display: grid; grid-template-columns: minmax(0, 1fr) 110px; gap: 25px; padding: 0 0 24px; }
-    .project + .project { border-top: 1px solid var(--rule); padding-top: 24px; }
-    .project:last-child { padding-bottom: 0; }
-    .project h3 { margin: 0 0 8px; }
-    .project p { font-size: 14px; color: var(--muted); line-height: 1.8; margin: 0; }
-    .project .project-meta { margin: 11px 0 0; font-size: 11px; color: var(--green); letter-spacing: .035em; }
-    .project-type { align-self: start; justify-self: end; border: 1px solid #cbd5c6; border-radius: 3px; padding: 3px 8px; color: var(--green); font-size: 10px; text-align: center; white-space: nowrap; }
+    .paper { padding: 0 0 27px; }
+    .paper + .paper { border-top: 1px solid var(--rule); padding-top: 27px; }
+    .paper:last-child { padding-bottom: 0; }
+    .paper h3 { margin: 0 0 9px; font-size: 17px; font-weight: 600; line-height: 1.55; }
+    .paper .authors { font-size: 14px; color: var(--muted); line-height: 1.8; margin: 0; }
+    .paper .authors strong { font-weight: 650; color: var(--ink); }
+    .paper .paper-status { margin: 10px 0 0; font-size: 12px; color: var(--green); line-height: 1.6; }
     .education-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 5px; }
     .education-heading h3 { margin: 0; font-size: 17px; }
     .education-date { flex-shrink: 0; color: var(--muted); font-size: 12px; }
@@ -110,8 +110,8 @@
       .section { display: block; padding: 27px 0 30px; }
       .section-label { margin: 0 0 17px; font-size: 11px; }
       .about p { font-size: 15px; line-height: 1.85; }
-      .project { grid-template-columns: 1fr; gap: 11px; }
-      .project-type { justify-self: start; grid-row: 1; }
+      .paper h3 { font-size: 16px; }
+      .paper .authors { font-size: 13px; }
       .education-subtitle { font-size: 15px; }
       .contact-list { display: grid; gap: 14px; }
       footer { min-height: 84px; font-size: 10px; }
@@ -145,7 +145,7 @@
       <nav class="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#research">Interests</a>
-        <a href="#projects">Projects</a>
+        <a href="#manuscripts">Manuscripts</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -159,7 +159,7 @@
           <div class="hero-links">
             <a class="primary-link" href="mailto:syf2023@bupt.edu.cn">Email me <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             <a href="https://github.com/CyRex127">GitHub <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="#projects">Selected projects <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#manuscripts">Submitted manuscripts <svg class="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
         <div class="portrait" aria-hidden="true"><span class="initials">Ys.</span></div>
@@ -181,16 +181,28 @@
           </ol>
         </div>
       </section>
-      <section class="section" id="projects" aria-labelledby="projects-heading">
-        <h2 class="section-label" id="projects-heading">Selected projects</h2>
+      <section class="section" id="manuscripts" aria-labelledby="manuscripts-heading">
+        <h2 class="section-label" id="manuscripts-heading">Submitted manuscripts</h2>
         <div class="section-body">
-          <article class="project">
-            <div><h3>Multimodal generative model inference</h3><p>Built controlled benchmarks for image generation and editing with PyTorch and Hugging Face Diffusers. Profiled memory use and explored cache cleanup after denoising while checking output consistency.</p><p class="project-meta">PyTorch · Diffusers · Profiling</p></div>
-            <span class="project-type">Personal project</span>
+          <article class="paper">
+            <h3>PRES: Preserving Readout Contrasts for Video Frame Selection</h3>
+            <p class="authors">Xiandi Luo, Hui Feng, Yiling Zhou, <strong>Yifei Shao</strong>, Yihao Ouyang, Haozhao Wang, Shiwei Li, Lei Wu, Yuhua Li, Ruixuan Li.</p>
+            <p class="paper-status"><em>Submitted to CVPR 2027.</em></p>
           </article>
-          <article class="project">
-            <div><h3>Pico · Local code agent harness</h3><p>Developed a local code agent harness that brings together model backends, tool execution, context management, and checkpoint recovery, with structured memory and runtime auditing.</p><p class="project-meta">LLM agents · Context management · Tool execution</p></div>
-            <span class="project-type">Personal project</span>
+          <article class="paper">
+            <h3>MINT: Memory-Informed Novelty Tracking for Video Frame Selection</h3>
+            <p class="authors">Xiandi Luo, Yiling Zhou, Hui Feng, <strong>Yifei Shao</strong>, Zhuoqi Hu, Yihao Ouyang, Haozhao Wang, Shiwei Li, Yuhua Li, Ruixuan Li.</p>
+            <p class="paper-status"><em>Submitted to CVPR 2027.</em></p>
+          </article>
+          <article class="paper">
+            <h3>Mem-DS: Reference-Conditioned Dataset Memory for Multimodal Data Selection</h3>
+            <p class="authors">Xiandi Luo, Jixin Zhang, Hui Feng, Yiling Zhou, <strong>Yifei Shao</strong>, Haozhao Wang, Shiwei Li, Yuhua Li, Ruixuan Li.</p>
+            <p class="paper-status"><em>Submitted to CVPR 2027.</em></p>
+          </article>
+          <article class="paper">
+            <h3>DS Bench: Evaluating Multimodal Data Selection across Targets, Candidate Pools, and Students</h3>
+            <p class="authors">Xiandi Luo, Hui Feng, Haozhao Wang, Yiling Zhou, <strong>Yifei Shao</strong>, Yihao Ouyang, Shiwei Li, Jinghua Zhang, Yuhua Li, Ruixuan Li.</p>
+            <p class="paper-status"><em>Submitted to CVPR 2027.</em></p>
           </article>
         </div>
       </section>
